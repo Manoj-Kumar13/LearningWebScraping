@@ -26,11 +26,6 @@ for page in range(total_pages):
     soup = BeautifulSoup(html_text,'lxml')
     books_data = soup.findAll('article', class_='product_pod')
 
-
-
-
-
-
     for book in books_data:
         col = 0
         title = book.h3.a['title']
