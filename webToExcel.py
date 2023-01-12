@@ -21,7 +21,7 @@ for cl in range(4):
 
 row = 1
 for page in range(total_pages):
-    html_text = requests.get(f'https://books.toscrape.com/catalogue/page-{page+1}.html').text
+    html_text = requests.get(f'https://books.toscrape.com/catalogue/page-{page+1}.html').content
 
     soup = BeautifulSoup(html_text,'lxml')
     books_data = soup.findAll('article', class_='product_pod')
@@ -32,11 +32,9 @@ for page in range(total_pages):
         rating = book.p['class']
         price = book.find('div', class_='product_price').p.string
         stock = book.find('div', class_='product_price').find('p',class_='instock').contents[2].strip()
-        # print(stock)
-        price = price.split('Â')
         worksheet.write(row, col, title)
         worksheet.write(row, col+1, rating[-1])
-        worksheet.write(row, col+2, price[1])
+        worksheet.write(row, col+2, price)
         worksheet.write(row, col+3, stock)
         row+=1
     print(f"page number : {page+1} done")
