@@ -11,6 +11,7 @@ This is the repo on the journey to learn about web scraping and storing data
 - ```requests``` - for making url requests
 - ```xlsxwriter``` - for excel files
 - ```pymongo``` - for connecting with Database
+- ```selenium``` - for web automation
 
 ## instructions
 - make sure to create savedWebpages directory otherwise code for saving webpages will crash
