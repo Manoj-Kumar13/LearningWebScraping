@@ -102,7 +102,34 @@ find = "Allen"
 for person in people:
     if person == find:
         print(f"{person} found using loop")
+        break #break is used to stop the loop
 
 # 2nd solution
 if find in people:
     print(f"{find} is my found using if statement")
+
+budget = 100
+price = 10
+items = 0
+# find how many items we can buy
+while budget>0:
+    budget -= price
+    items+=1
+
+print(f"we can buy {items} items")
+
+# functions in python
+def special_count(stop_count, step=1    ):
+    for x in range(1,stop_count+1, step):
+        print(x)
+
+special_count(stop_count=5, step=2)
+
+# hide initial numbers of 16 digit card
+def hideCard(number):
+    newNum = "**********"
+    newNum += number[12 :]
+    return newNum
+
+result = hideCard('1234567890123456')
+print(result)
