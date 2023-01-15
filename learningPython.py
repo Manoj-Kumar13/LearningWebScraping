@@ -133,3 +133,34 @@ def hideCard(number):
 
 result = hideCard('1234567890123456')
 print(result)
+
+# classes in python
+class CreditCard:
+    # creating a constructor
+    raise_limit = 1.5
+    def __init__(self, number, limit=1000, company='ABC'):
+        self.number = number
+        self.limit = limit
+        self.company = company
+    def raise_card_limit(self):
+        # self.limit *= self.raise_limit alternatve way
+        self.limit *= CreditCard.raise_limit
+        self.limit = int(self.limit)
+
+
+# my_card = CreditCard()
+# my_card.number = '1234567890123456'
+# my_card.limit = 5000
+# my_card.company = "abc"
+# print(my_card.number)
+# print(my_card.limit)
+# print(my_card.company)
+
+c1 = CreditCard(number='1234567890123456', limit=5000, company='ABC')
+c2 = CreditCard(number='5678901234567890', limit=7000, company='CDE')
+c3 = CreditCard(number='9012345678901234', limit=3000, company='XYZ')
+
+print(c1.number, c1.limit, c1.company)
+print(c2.number, c2.limit, c2.company)
+c3.raise_card_limit()
+print(c3.number, c3.limit, c3.company)
