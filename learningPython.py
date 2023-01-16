@@ -164,3 +164,23 @@ print(c1.number, c1.limit, c1.company)
 print(c2.number, c2.limit, c2.company)
 c3.raise_card_limit()
 print(c3.number, c3.limit, c3.company)
+
+class Item:
+    # setting expected data-type
+    def __init__(self, name:str, price: int =100, quantity: int =0):
+        # run validations on received arguments
+        assert price>=0, f"price can not be negative"
+        assert quantity>=0, f"quantity can not be negative"
+
+        # setting values
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+
+item1 = Item("phone",1,1)
+
+print(item1.name, item1.price, item1.quantity)
+
+# getting all the available attributes
+print(Item.__dict__)
+print(item1.__dict__)

@@ -36,13 +36,14 @@ for page in range(total_pages):
         rating = book.p['class']
         price = book.find('div', class_='product_price').p.text
         stock = book.find('div', class_='product_price').find('p',class_='instock').contents[2].strip()
-        print(price)
+        # print(price)
 
         # print(f'title = {title}, rating = {rating}, price = {price}, stock = {stock}\n')
 
         post = {"_id": row, "Title": title, "Rating": rating[-1], "price": price, "Stock": stock}
+        print(post)
 
-        collection.insert_one(post)
+        # collection.insert_one(post)
 
         row+=1
     print(f"page number : {page+1} done")
