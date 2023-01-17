@@ -166,6 +166,7 @@ c3.raise_card_limit()
 print(c3.number, c3.limit, c3.company)
 
 class Item:
+    all = []
     # setting expected data-type
     def __init__(self, name:str, price: int =100, quantity: int =0):
         # run validations on received arguments
@@ -177,6 +178,13 @@ class Item:
         self.price = price
         self.quantity = quantity
 
+        # keeping all instances
+        Item.all.append(self)
+
+        # representing the instances
+    def __repr__(self):
+        return f"Item('{self.name}', {self.price}, {self.quantity} )"
+
 item1 = Item("phone",1,1)
 
 print(item1.name, item1.price, item1.quantity)
@@ -184,3 +192,8 @@ print(item1.name, item1.price, item1.quantity)
 # getting all the available attributes
 print(Item.__dict__)
 print(item1.__dict__)
+
+print(Item.all) # using repr method
+
+# for instance in Item.all:
+#     print(instance.name)
