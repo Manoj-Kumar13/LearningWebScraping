@@ -165,6 +165,8 @@ print(c2.number, c2.limit, c2.company)
 c3.raise_card_limit()
 print(c3.number, c3.limit, c3.company)
 
+# for working with csv
+import csv
 class Item:
     all = []
     # setting expected data-type
@@ -185,13 +187,37 @@ class Item:
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity} )"
 
-item1 = Item("phone",1,1)
+    # working with class methods
+    @classmethod
+    def instantiate_from_csv(cls):
+        with open('items.csv','r') as f:
+            reader = csv.DictReader(f)
+            items = list(reader)
 
-print(item1.name, item1.price, item1.quantity)
+        for item in items:
+            Item(
+                name = item.get('name'),
+                price = float(item.get('price')),
+                quantity= int(item.get('quantity')),
+            )
+
+    # working with static methods
+    @staticmethod
+    def is_integer(num):
+        # check the floats which are point zero
+        if isinstance(num, float):
+            # check if the floats are point zero
+            return num.is_integer()
+        elif isinstance(num, int):
+            return True
+        else:
+            return False
 
 # getting all the available attributes
-print(Item.__dict__)
-print(item1.__dict__)
+# print(Item.__dict__)
+
+# Item.instantiate_from_csv()
+# print(Item.is_integer(7.0))
 
 print(Item.all) # using repr method
 

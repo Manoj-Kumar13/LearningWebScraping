@@ -59,7 +59,7 @@ for page in range(total_pages):
 
     for book in books_data:
         product_url = book.h3.a['href']
-        title = book.h3.a['title']
+        # title = book.h3.a['title']
 
 
         # calling function to get individual product details
