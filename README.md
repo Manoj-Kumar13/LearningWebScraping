@@ -23,5 +23,6 @@ This is the repo on the journey to learn about web scraping and storing data
 - For ```Selenium``` , you can follow this [tutorial](https://www.youtube.com/watch?v=j7VZsCCnptM) or visit their website for documentation
 - For ```pymongo``` , you can follow this [tutorial](https://www.youtube.com/watch?v=rE_bJl2GAY8) or vsiit their website for documentation
 - I also learned ```Python``` on the way as I was not quite proficient with it, you can follow this amazing [Tutorial](https://www.youtube.com/watch?v=m0LdKZ-prto) if you want to
+- To learn ```OOPS``` in python you can refer to this [tutorial](https://youtu.be/Ej_02ICOIgs)
 
 Feel free to reach me for any kind of help!!
