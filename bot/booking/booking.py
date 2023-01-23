@@ -1,11 +1,11 @@
 import time
-
 import bot.booking.constants as const
 import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import selenium.common.exceptions as exp
 
 class Booking(webdriver.Chrome):
     # to stop chrome from closing automatically
@@ -90,10 +90,34 @@ class Booking(webdriver.Chrome):
 
     def select_adults(self,adults:int):
         try:
-            input_ele = self.find_element(By.CSS_SELECTOR,'id[xp__guests__toggle]')
+            input_ele = self.find_element(By.CSS_SELECTOR,'label[id="xp__guests__toggle"]')
         except:
             print("inside except adults input element")
             input_ele = self.find_element(By.CSS_SELECTOR, 'div[class="d67edddcf0"]')
 
         input_ele.click()
+
+        try:
+            decrease_btn = self.find_element(
+                By.XPATH ,
+                '/html/body/div[1]/div[2]/div/div/div/form/div[1]/div[3]/div/div/div/div/div[1]/div[2]/button[1]'
+            )
+
+        except exp.NoSuchElementException:
+            decrease_btn=self.find_element( By.CSS_SELECTOR,
+                'button[aria-label="Decrease number of Adults"]'
+            )
+        except:
+            decrease_btn = self.find_element(
+                By.XPATH,
+                '/html/body/div[2]/div[2]/div/div/div/form/div[1]/div[3]/div/div/div/div/div[1]/div[2]/button[1]'
+            )
+        decrease_btn.click()
+
+        # try:
+        submit_btn = self.find_element(By.CSS_SELECTOR, 'button[type="submit"]')
+        # except:
+        #     print("submit btn not found")
+        submit_btn.click()
+
 
