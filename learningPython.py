@@ -16,6 +16,9 @@ print(str(int1) + str(int2))
 # name = input("what is your name? : ")
 # print("Hi,", name)
 
+# another way of taking input
+# print("Hello " + input("what is your name?"))
+
 # receiving an integer input
 current_year = 2023
 # age = int(input("what is your age? : "))
@@ -31,7 +34,7 @@ print(name.lower())
 
 # arithmatic operations in python
 print(f"float division {4 / 2}")
-print(f"interger division {4 // 2}")
+print(f"integer division {4 // 2}")
 print(f"multiplication {4 * 3}")
 print(f"power {4 ** 3}")
 
