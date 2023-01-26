@@ -226,3 +226,10 @@ print(Item.all) # using repr method
 
 # for instance in Item.all:
 #     print(instance.name)
+
+# round function is used to round-off the value upto certain decimal places
+print(round(2.545454,2))
+
+# round number to certain decimal places using formatting
+bill_amount = 5
+print("{:.2f}".format(bill_amount))
