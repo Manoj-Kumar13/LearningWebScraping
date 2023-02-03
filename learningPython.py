@@ -283,3 +283,24 @@ temp_list = list(password)
 random.shuffle(temp_list)
 print("Hard password",''.join(temp_list))
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+
+# docstrings in python
+def docsEx():
+    """This is the example docstring text"""
+    pass
+
+docsEx()
+
+# functions can also be used as values in dictionaries
+def add(a,b):
+    return a+b
+
+def subtract(a,b):
+    return a-b
+funcDict = {
+    "+" : add,
+    "-": subtract
+}
+
+calculation_function= funcDict["-"]
+print(calculation_function(10,3))
